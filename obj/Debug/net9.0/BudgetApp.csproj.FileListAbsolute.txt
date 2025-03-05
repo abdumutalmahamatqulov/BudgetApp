@@ -8,6 +8,7 @@ C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\BudgetApp.dll
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\BudgetApp.pdb
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\Humanizer.dll
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\Microsoft.AspNet.Identity.Core.dll
+C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -39,6 +40,8 @@ C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\Microsoft.Exten
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\Microsoft.OpenApi.dll
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\Mono.TextTemplating.dll
@@ -128,6 +131,7 @@ C:\Users\abdum\source\repos\BudgetApp\BudgetApp\obj\Debug\net9.0\BudgetApp.Assem
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\obj\Debug\net9.0\BudgetApp.csproj.CoreCompileInputs.cache
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\obj\Debug\net9.0\BudgetApp.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\obj\Debug\net9.0\BudgetApp.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\abdum\source\repos\BudgetApp\BudgetApp\obj\Debug\net9.0\BudgetApp.sourcelink.json
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\obj\Debug\net9.0\scopedcss\bundle\BudgetApp.styles.css
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\obj\Debug\net9.0\staticwebassets.development.json
@@ -145,6 +149,3 @@ C:\Users\abdum\source\repos\BudgetApp\BudgetApp\obj\Debug\net9.0\BudgetApp.pdb
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\obj\Debug\net9.0\BudgetApp.genruntimeconfig.cache
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\obj\Debug\net9.0\ref\BudgetApp.dll
 C:\Users\abdum\source\repos\BudgetApp\BudgetApp\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
-C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
-C:\Users\abdum\source\repos\BudgetApp\BudgetApp\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

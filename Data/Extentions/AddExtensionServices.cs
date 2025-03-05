@@ -9,6 +9,10 @@ using System.Text;
 using BudgetApp.Data.Components;
 using BudgetApp.Data.Context;
 using Microsoft.AspNetCore.Identity;
+using BudgetApp.Data.Categories.Repositories;
+using BudgetApp.Data.Categories.Services;
+using BudgetApp.Data.Transactions.Repositories;
+using BudgetApp.Data.Transactions.Services;
 
 namespace BudgetApp.Data.Extentions;
 
@@ -18,8 +22,10 @@ public static class AddExtensionServices
 	{
 		services.AddScoped<ITokenRepository, TokenRepository>();
 		services.AddScoped<IAuthService, AuthService>();
-		services.AddScoped<IUserService, UserService>();
-		services.AddScoped<IUserRepository, UserRepository>();
+		services.AddScoped<ICategoryRepository, CategoryRepository>();
+		services.AddScoped<ICategoryService, CategoryService>();
+		services.AddScoped<ITransRepository, TransRepository>();
+		services.AddScoped<ITransService, TransService>();
 		return services;
 	}
 
@@ -58,13 +64,6 @@ public static class AddExtensionServices
 					Email = "your-email@example.com"
 				}
 			});
-			//builder.Services.AddSwaggerGen(c =>
-			//{
-			//	c.SwaggerDoc("v1", new OpenApiInfo { Title = "BugalteryAPI", Version = "v1" });
-			//	c.IgnoreObsoleteProperties();
-			//});
-
-			// JWT uchun Bearer token qo‘shish
 			c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
 			{
 				In = ParameterLocation.Header,
@@ -89,15 +88,15 @@ public static class AddExtensionServices
 					}
 				});
 		});
-		services.AddIdentity<User, IdentityRole<Guid>>(options =>
-		{
-			options.Password.RequireDigit = true;
-			options.Password.RequiredLength = 8;
-			options.Password.RequireNonAlphanumeric = false;
-			options.Password.RequireUppercase = true;
-			options.User.RequireUniqueEmail = true;
-		})
-			.AddEntityFrameworkStores<AppDbContext>()
-			.AddDefaultTokenProviders();
+		//services.AddIdentity<User, IdentityRole<Guid>>(options =>
+		//{
+		//	options.Password.RequireDigit = true;
+		//	options.Password.RequiredLength = 8;
+		//	options.Password.RequireNonAlphanumeric = false;
+		//	options.Password.RequireUppercase = true;
+		//	options.User.RequireUniqueEmail = true;
+		//})
+		//	.AddEntityFrameworkStores<AppDbContext>()
+		//	.AddDefaultTokenProviders();
 	}
 }

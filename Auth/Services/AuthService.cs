@@ -4,14 +4,16 @@ using BudgetApp.Data.Components;
 using BudgetApp.Auth.Repositories.Interface;
 using BudgetApp.Data.Exceptions;
 using Microsoft.AspNetCore.Identity;
+using BudgetApp.Data.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace BudgetApp.Auth.Services;
 
 public class AuthService : IAuthService
 {
-	private readonly UserManager<User> _userManager;
+	private readonly AppDbContext _userManager;
 	readonly ITokenRepository _tokenGenerator;
-	public AuthService(UserManager<User> userManager, ITokenRepository tokenGenerator)
+	public AuthService(AppDbContext userManager, ITokenRepository tokenGenerator)
 	{
 		_userManager = userManager;
 		_tokenGenerator = tokenGenerator;
@@ -19,20 +21,24 @@ public class AuthService : IAuthService
 
 	public async ValueTask<TokenModel> Login(LoginModel model)
 	{
-		var user = await _userManager.FindByEmailAsync(model.Email);
+		var user = await _userManager.Users.AsNoTracking().FirstOrDefaultAsync(u=>u.Email.ToLower()==model.Email.ToLower());
 		if (user == null)
 		{
-			throw new BugalteryAPIException(400, "user_not_Found");
+			throw new BugalteryAPIException(400, "User not found");
 		}
-		var checkPassword = await _userManager.CheckPasswordAsync(user, model.Password);
-		var roles = await _userManager.GetRolesAsync(user);
-		if (!checkPassword)
+
+		if (user.PasswordHash != model.Password) // Parol hashing ishlatilmasa
 		{
 			throw new BugalteryAPIException(401, "Email or password is incorrect");
 		}
-		//var result = await _signInManager.PasswordSignInAsync(user, model.Password, false, false);
-		var token = _tokenGenerator.CreateToken(user, roles);
-		return new TokenModel() { Token = token, Roles = roles.ToArray(), User = new UserModel().MapFromEntity(user) };
+
+		var token = _tokenGenerator.CreateToken(user, new List<string>());
+
+		return new TokenModel()
+		{
+			Token = token,
+			User = new UserModel().MapFromEntity(user)
+		};
 
 	}
 
@@ -40,16 +46,13 @@ public class AuthService : IAuthService
 	{
 		User newUser = new User()
 		{
-			UserName = user.Username,
+			FullName = user.Username,
 			Email = user.Email,
 			PasswordHash = user.Password
 		};
-		var registerUser = await _userManager.CreateAsync(newUser, user.Password);
-		if (!registerUser.Succeeded)
-		{
+		 await _userManager.Users.AddAsync(newUser);
+		await _userManager.SaveChangesAsync();
 
-			throw new BugalteryAPIException(500, string.Join(", ", registerUser.Errors.Select(x => x.Description)));
-		}
 		return new UserModel().MapFromEntity(newUser);
 	}
 }

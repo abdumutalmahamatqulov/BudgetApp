@@ -15,10 +15,9 @@ public class UserCreateModel
 	{
 		var entity = new User()
 		{
-			Id = Guid.NewGuid(),
-			UserName = this.Username,
+			FullName = this.Username,
 			Email = this.Email,
-			PasswordHash = this.Password
+			PasswordHash = this.Password,
 		};
 		return entity;
 

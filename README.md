@@ -1,87 +1,85 @@
-﻿### **Technologies**  
-[Customizable] The technologies used in this project:  
+﻿# BugalteryAPI
 
-- **Backend:** ASP.NET Core 9.0  
-- **Database:** PostgreSQL 16  
-- **Authentication:** JWT Bearer  
-- **Validation:** FluentValidation  
-- **API Documentation:** Swagger (Swashbuckle)  
- 
+## Overview
+BugalteryAPI is a financial management API built with ASP.NET Core 9.0. It provides secure authentication and allows users to manage their budgets and transactions efficiently. The backend is powered by Entity Framework Core with PostgreSQL as the database.
 
-You can customize this section to match the technologies used in your project. For example, if additional libraries or technologies are included, feel free to add them (e.g., Redis, Docker, etc.).
+## Technologies Used
+### Backend:
+- **ASP.NET Core 9.0** – Web API framework
+- **Entity Framework Core 9.0** – ORM for database interactions
+- **PostgreSQL** – Relational database
+- **JWT Authentication** – Secure user authentication
+- **Middleware** – Custom request processing
+- **Swagger (Swashbuckle)** – API documentation
 
-### **Installation**  
+### Frontend:
+- **React (JSX)** – Frontend library for UI
+- **Ant Design** – UI framework for styled components
 
-#### **Requirements**  
-To run this project, you need to have the following software installed:  
+## API Base URL
+- **Localhost:**
+  - `https://localhost:7161`
+  - `http://localhost:5090`
 
-- **.NET SDK 9.0**  
-- **PostgreSQL 16**  
-- **Git**  
-- *(Optional)* Visual Studio 2022 or Visual Studio Code  
+## Installation
+### Backend Setup
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/abdumutalmahamatqulov/BudgetApp
+   ```
+2. Install dependencies:
+   ```sh
+   dotnet restore
+   ```
+3. Apply database migrations:
+   ```sh
+   dotnet ef database update
+   ```
+4. Run the API:
+   ```sh
+   dotnet run
+   ```
 
-Step 1: Clone the Repository
-[Customizable] Replace the repository URL with your actual repository link.
+### Required .NET Packages
+To ensure the backend functions properly, install the following NuGet packages:
+```sh
+# Authentication & Identity
+ dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version 9.0.2
+ dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version 9.0.2
+ dotnet add package Microsoft.IdentityModel.Tokens --version 8.6.0
+ dotnet add package System.IdentityModel.Tokens.Jwt --version 8.6.0
 
-To clone the project, run the following commands in your terminal:
+# Entity Framework Core & PostgreSQL
+ dotnet add package Microsoft.EntityFrameworkCore --version 9.0.2
+ dotnet add package Microsoft.EntityFrameworkCore.Design --version 9.0.2
+ dotnet add package Microsoft.EntityFrameworkCore.Tools --version 9.0.2
+ dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 9.0.4
 
-git clone https://github.com/abdumutalmakhmatqulov/BudgetApp.git
-cd BudgetApp/BudgetApp
-
-### **Step 2: Configure PostgreSQL**  
-
-Create a new database in PostgreSQL by running the following command in the PostgreSQL terminal or any database management tool (e.g., pgAdmin, DBeaver, or psql):  
-
-```sql
-CREATE DATABASE your_database_name;
-```
-Make sure to replace `your_database_name` with your desired database name.  
-
-#### **Update Connection String**  
-Modify the connection string in your `appsettings.json` file to match your PostgreSQL configuration:  
-
-```json
-"ConnectionStrings": {
-  "DefaultConnection": "Host=localhost;Port=5432;Database=your_database_name;Username=your_username;Password=your_password"
-}
-```
-Replace `your_database_name`, `your_username`, and `your_password` with your actual PostgreSQL credentials.
-
-Step 3: Apply Migrations
- first create a migration:
-
- dotnet ef migrations add InitialCreate
-dotnet ef database update
-
-### **API Endpoints**  
-[Customizable] Modify or add endpoints as needed.  
-
-Below are the main API endpoints and their purposes:  
-
-| **Method** | **Endpoint**          | **Description**                            | **Authentication**       |  
-|-----------|----------------------|--------------------------------|------------------------|  
-| **POST**  | `/api/user`          | Create a new user              | No                     |  
-| **POST**  | `/api/auth/login`    | Generate a token for a user    | No                     |  
-| **GET**   | `/api/user/{id}`     | Get user details by ID         | JWT token required     |  
-| **GET**   | `/api/user/AllUser`  | Retrieve all users             | JWT token required     |  
-| **PUT**   | `/api/user`          | Update user details            | JWT token required     |  
-| **DELETE**| `/api/user/{id}`     | Delete a user                  | JWT token required     |  
-
-You can modify this list to include additional endpoints as needed. 🚀
-
-### **Project Structure**  
-
-The project is organized into the following main directories:  
-
-```
-/ProjectRoot  
-│── /Controllers/       # API endpoints (e.g., UserController)  
-│── /Data/              # Database context (AppDbContext) and migrations  
-│── /Models/            # DTO classes (e.g., UserCreateModel, UserUpdateModel)  
-│── /Repositories/      # Repository classes for database interactions  
-│── /Services/          # Business logic (e.g., AuthService, UserService)  
-│── appsettings.json    # Configuration file (database, JWT, etc.)  
-│── Program.cs          # Application entry point # Dependency injection and middleware  
+# API Documentation
+ dotnet add package Microsoft.AspNetCore.OpenApi --version 9.0.2
+ dotnet add package Swashbuckle.AspNetCore --version 7.3.1
 ```
 
-You can modify this structure to fit your project's needs. 🚀
+### Frontend Setup
+1. Navigate to the frontend folder:
+   ```sh
+   cd frontend
+   ```
+2. Install dependencies:
+   ```sh
+   yarn install
+   ```
+3. Start the React development server:
+   ```sh
+   yarn start
+   ```
+
+## Features
+- User authentication with JWT
+- Budget and transaction management
+- Secure API endpoints
+- Interactive API documentation with Swagger
+
+## Contact
+For inquiries or support, contact: **abdumutalmahamatqulov6@gmail.com**
+

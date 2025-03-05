@@ -1,13 +1,12 @@
 ﻿using BudgetApp.Data.Common.Repositories.Interfaces;
 using BudgetApp.Data.Components;
-using BudgetApp.Data.Components.Commons;
 using BudgetApp.Data.Pages;
 using Microsoft.EntityFrameworkCore;
 using System.Security.AccessControl;
 
 namespace BudgetApp.Data.Common.Repositories;
 
-public abstract class BaseRepository<TEntity, TFilter> : IBaseRepository<TEntity, TFilter> where TEntity : User where TFilter : PaginationParams
+public abstract class BaseRepository<TEntity, TFilter> : IBaseRepository<TEntity, TFilter> where TEntity : Auditable where TFilter : PaginationParams
 {
 	public virtual async Task<List<TEntity>> GetByFilter(TFilter model, string[] includes = null)
 	{

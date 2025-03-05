@@ -21,8 +21,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddServiceConfiguration()
 	.AddSwaggerService(builder.Configuration);
 
-builder.Services.AddControllers()
-	.AddApplicationPart(typeof(UserController).Assembly);
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddLogging(logging=>logging.AddConsole());
 

@@ -1,5 +1,4 @@
 ﻿using BudgetApp.Data.Exceptions;
-using BudgetApp.Data.Models;
 
 namespace BudgetApp.Data.Middlewares;
 

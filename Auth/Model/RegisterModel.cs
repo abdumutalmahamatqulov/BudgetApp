@@ -12,13 +12,12 @@ public class RegisterModel
 	[Required]
 	public string Password { get; set; }
 
-	public static RegisterModel FromUserCreateModel(UserCreateModel model)
+	public  RegisterModel MapFromEntity(User model)
 	{
-		return new RegisterModel
-		{
-			Username = model.Username,
-			Email = model.Email,
-			Password = model.Password,
-		};
+
+		Username = model.FullName;
+		Email = model.Email;
+		Password = model.PasswordHash;
+		return this;
 	}
 }
